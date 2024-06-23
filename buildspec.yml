@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing necessary tools..."
+      - npm install  # Or any other command to set up your environment
+  build:
+    commands:
+      - echo "Packaging code for review..."
+      - zip -r packaged_code.zip . -x "node_modules/*"  # Excluding node_modules
+artifacts:
+  files:
+    - packaged_code.zip
+  discard-paths: yes
